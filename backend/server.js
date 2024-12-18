@@ -23,6 +23,13 @@ app.use('/api/books', bookRoutes);
 app.use('/api/issue', issueRoutes);
 app.use('/api', statisticsRoutes);
 
+app.get('/', (req,res)=>{
+  res.send({
+    activestatus:true,
+    error:false,
+  })
+})
+
 mongoose.connect(process.env.MONGODB_URI, {
   
 })
